@@ -22,4 +22,15 @@ end
 def valid_move?(board, index)
   index.between?(0, 8) && !position_taken?(board, index)
 end
- 
+
+def turn(board, index)
+  puts "Please enter 1-9:"
+  user_input = gets.chomp
+  index = input_to_index(user_input)
+  if !valid_move?
+    puts "Invalid Entry!"
+    turn(board, index)
+  else
+    puts board
+  end
+end
